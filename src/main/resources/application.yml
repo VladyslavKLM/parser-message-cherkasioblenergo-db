@@ -1,0 +1,41 @@
+spring:
+  #  application:
+  #    name: parser-message-cherkasioblenergo-db
+  datasource:
+    url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/cherkasioblenergo-db}
+    username: ${JDBC_DATABASE_USERNAME:postgres}
+    password: ${JDBC_DATABASE_PASSWORD:root}
+    driver-class-name: org.postgresql.Driver
+#    hikari:
+#      minimum-idle: 5
+#      maximum-pool-size: 20
+#      idle-timeout: 30000
+#      pool-name: HikariPool-1
+#      max-lifetime: 2000000
+#      connection-timeout: 30000
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#      properties:
+#        hibernate:
+#          dialect: org.hibernate.dialect.PostgreSQLDialect
+#          format_sql: true
+#    show-sql: true
+
+  flyway:
+    enabled: true
+    locations: classpath:/db/migration
+    table: schema_ver
+    out-of-order: true
+    user: ${JDBC_DATABASE_USERNAME:postgres}
+    password: ${JDBC_DATABASE_PASSWORD:root}
+
+
+
+bot:
+  token: 7339272408:AAGiZGswKMTYXEbSGL-NKR3xVldOrbmDVU4
+  name: ParserMessageOblenergoBot
+
+#logging:
+#  level:
+#    org.flywaydb: DEBUG

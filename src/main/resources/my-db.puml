@@ -1,0 +1,35 @@
+
+@startuml
+
+class Consumer{
+    + long id
+    + long chatId
+    + String username
+    - long turnNumber
+    - String role
+}
+
+class Schedule{
+    + long id
+    - LocalDate date
+    - String hour
+    - long turnNumber
+}
+Consumer <-> Schedule
+@enduml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
